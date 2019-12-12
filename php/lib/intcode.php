@@ -151,7 +151,7 @@ class Computer {
     protected function getParam(int $mode, int $offset): int {
         $immediate = $this->peek($this->programCounter + $offset);
         switch ($mode) {
-            case 0: // relative
+            case 0: // position
                 return $this->peek($immediate);
             case 1: // immediate
                 return $immediate;
@@ -165,7 +165,7 @@ class Computer {
     protected function setParam(int $mode, int $offset, int $value) {
         $immediate = $this->peek($this->programCounter + $offset);
         switch ($mode) {
-            case 0: // relative
+            case 0: // position
             case 1: // immediate
                 $this->poke($immediate, $value);
                 break;
