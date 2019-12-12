@@ -31,27 +31,27 @@ function paint($input, $initialColor) {
     $painted = ['0,0' => $initialColor];
     $position = [0, 0]; // origin
     $pointing = [0, 1]; // up
-    
+
     $computer = new \Intcode\Computer($input);
     while (true) {
         if ($computer->isHalted()) {
             break;
         }
-    
+
         $p = "$position[0],$position[1]";
-    
+
         $color = 0;
         if (isset($painted[$p]) && $painted[$p] == $white) {
             $color = 1;
         }
-    
+
         $computer->input($color);
         $computer->run();
-    
+
         $output = $computer->output(2);
-    
+
         $painted[$p] = $output[0] == 1 ? $white : $black;
-    
+
         $pointing = rotate($output[1], $pointing);
         $position[0] += $pointing[0];
         $position[1] += $pointing[1];
@@ -71,7 +71,7 @@ $minx = $miny = 0;
 foreach ($painted as $pos => $paint) {
     list ($x, $y) = explode(',', $pos);
     $minx = min($x, $minx);
-    $miny = min($y, $miny);    
+    $miny = min($y, $miny);
 }
 
 $output = [];
