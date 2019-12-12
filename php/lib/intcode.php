@@ -44,6 +44,10 @@ class Computer {
         return $this->halted;
     }
 
+    public function isRunnable(): bool {
+        return !$this->isBlocked() && !$this->isHalted();
+    }
+
     /** @param int|int[] $val */
     public function input($val) {
         if (!is_array($val)) {
@@ -73,7 +77,7 @@ class Computer {
     }
 
     public function run() {
-        while (!$this->halted && !$this->blocked) {
+        while ($this->isRunnable()) {
             $this->step();
         }
     }
@@ -140,7 +144,7 @@ class Computer {
             $this->programCounter += 2;
             break;
         default:
-            throw new \Exception("unknown opcode: $opcode");
+            throw new \Exception("unknown opcode ($opcode) at position " . $this->programCounter);
         }
     }
 
