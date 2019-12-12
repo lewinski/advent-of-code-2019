@@ -52,5 +52,5 @@ foreach ($same as $xy) {
     $minsteps = min($minsteps, $steps[0][$xy] + $steps[1][$xy]);
 }
 
-echo "part 1: $mindist\n";
-echo "part 2: $minsteps\n";
+echo "day3 part1: $mindist\n";
+echo "day3 part2: $minsteps\n";

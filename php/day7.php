@@ -138,7 +138,7 @@ foreach ($perms as $phase) {
     }
     $max = max($thrust, $max);
 }
-echo "part1: $max\n";
+echo "day7 part1: $max\n";
 
 $max = 0;
 foreach ($perms as $phase) {
@@ -172,4 +172,4 @@ foreach ($perms as $phase) {
 
     $max = max($max, $thrust);
 }
-echo "part2: $max\n";
+echo "day7 part2: $max\n";

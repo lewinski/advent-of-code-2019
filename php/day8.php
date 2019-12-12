@@ -21,7 +21,7 @@ foreach ($layers as $layer) {
     }
 }
 
-echo "part1: $part1\n";
+echo "day8 part1: $part1\n";
 
 $trans = '?';
 $black = ' ';
@@ -40,7 +40,7 @@ foreach ($layers as $layer) {
     }
 }
 
-echo "part2: \n";
+echo "day8 part2: \n";
 $lines = str_split($picture, $w);
 foreach ($lines as $line) {
     echo "$line\n";

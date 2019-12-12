@@ -51,7 +51,7 @@ foreach ($asteroids as $a1) {
     }
 }
 
-echo "part1: $max\n";
+echo "day10 part1: $max\n";
 
 $angles = array_keys($maxseen);
 usort($angles, function ($a, $b) {
@@ -71,4 +71,4 @@ usort($angles, function ($a, $b) {
 });
 
 $part2 = $asteroids[$maxseen[$angles[199]]];
-echo "part2: ".($part2[1] * 100 + $part2[2])."\n";
+echo "day10 part2: ".($part2[1] * 100 + $part2[2])."\n";

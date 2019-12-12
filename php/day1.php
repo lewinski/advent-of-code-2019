@@ -26,5 +26,5 @@ foreach ($input as $line) {
     $fuel2 += fuel2($line);
 }
 
-echo "part 1: $fuel1\n";
-echo "part 2: $fuel2\n";
+echo "day1 part1: $fuel1\n";
+echo "day1 part2: $fuel2\n";

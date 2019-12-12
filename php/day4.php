@@ -32,5 +32,5 @@ for ($i = intval($start); $i <= intval($stop); $i++) {
     }
 }
 
-echo "part1: $part1\n";
-echo "part2: $part2\n";
+echo "day4 part1: $part1\n";
+echo "day4 part2: $part2\n";

@@ -21,7 +21,7 @@ $count = 0;
 foreach (array_keys($orbits) as $x) {
     $count += count(anc($x));
 }
-echo "part1: $count\n";
+echo "day6 part1: $count\n";
 
 $anc1 = anc('YOU');
 $anc2 = anc('SAN');
@@ -29,4 +29,4 @@ while (end($anc1) == end($anc2)) {
     array_pop($anc1);
     array_pop($anc2);
 }
-echo "part2: " . (count($anc1) + count($anc2)) . "\n";
+echo "day6 part2: " . (count($anc1) + count($anc2)) . "\n";

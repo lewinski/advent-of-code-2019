@@ -8,10 +8,10 @@ $computer = new \Intcode\Computer($input);
 $computer->input(1);
 $computer->run();
 $output = end($computer->output(0));
-echo "part1: $output\n";
+echo "day5 part1: $output\n";
 
 $computer = new \Intcode\Computer($input);
 $computer->input(5);
 $computer->run();
 $output = end($computer->output(0));
-echo "part2: $output\n";
+echo "day5 part2: $output\n";
