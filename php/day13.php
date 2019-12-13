@@ -4,7 +4,6 @@ require_once __DIR__.'/lib/intcode.php';
 
 $input = file_get_contents(__DIR__.'/../input/13.txt');
 
-
 $computer = new \Intcode\Computer($input);
 $computer->run();
 $output = $computer->output(0);
@@ -57,9 +56,13 @@ while (!$computer->isHalted()) {
         $display[$y][$x] = $tiles[$tile];
     }
 
-    $screen = implode("\n", array_map(function ($x) { return implode("", $x); }, $display));
-    $winner = strstr($screen, $tiles[2]) ? '' : "\nWinner!";
-    echo "$clear$screen\n\nStarting Blocks: $count | Score: $score$winner\n";
+    if (true) {
+        $screen = implode("\n", array_map(function ($x) { return implode("", $x); }, $display));
+        $blocks = substr_count($screen, $tiles[2]);
+        $winner = $blocks ? '' : "\nWinner!";
+        echo "$clear$screen\n\nScore: $score | Blocks: $blocks$winner\n";
+        usleep(2500);
+    }
 
     // artificial intelligence
     if ($ball > $paddle) {
@@ -70,5 +73,7 @@ while (!$computer->isHalted()) {
         $computer->input(0);
     }
 
-    usleep(2500);
 }
+
+echo "day13 part1: $count\n";
+echo "day13 part2: $score\n";
