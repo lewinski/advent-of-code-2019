@@ -66,7 +66,7 @@ class Computer {
         } elseif ($count == 1) {
             return array_shift($this->output);
         } elseif ($count == 0) {
-            $count = count($this->output);            
+            $count = count($this->output);
         }
 
         $output = [];
@@ -74,6 +74,16 @@ class Computer {
             $output[] = array_shift($this->output);
         }
         return $output;
+    }
+
+    public function asciiInput(string $val) {
+        $this->input(array_map('ord', str_split($val)));
+    }
+
+    /** @return string */
+    public function asciiOutput(int $count = 0) {
+        $output = $this->output($count);
+        return implode('', array_map('chr', $output));
     }
 
     public function run() {
